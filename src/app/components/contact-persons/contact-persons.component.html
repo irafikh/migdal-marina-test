@@ -1,0 +1,76 @@
+<form [formGroup]="contactPersonsForm">
+    <div class="form-group">
+      <span class="pageTitle">{{lblPageTitle}}</span>
+    </div>
+
+    <div class="form-group">
+          <div class="col-md-12">
+        <table mat-table [dataSource]="ds" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="deliveryFlag">
+            <th mat-header-cell class="headerTableItem textAlignLeft" *matHeaderCellDef>
+        <!--       <mat-checkbox (change)="$event ? masterToggle() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()"
+                            [aria-label]="checkboxLabel()">
+              </mat-checkbox> -->
+              מועדף
+            </th>
+            <td mat-cell *matCellDef="let row">
+              <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="onCheckboxChanged($event)"
+                            [checked]="selection.isSelected(row)"
+              >
+              </mat-checkbox>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell class="headerTableItem textAlignLeft" *matHeaderCellDef> No. </th>
+            <td mat-cell class="tableItem textAlignLeft" [ngClass]="'w-150 wordWrap'" *matCellDef="let element">
+                {{element.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell class="headerTableItem textAlignLeft" *matHeaderCellDef> שם איש קשר </th>
+            <td mat-cell class="tableItem textAlignLeft" [ngClass]="'w-150 wordWrap'" *matCellDef="let element">
+              {{element.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="typeValue">
+            <th mat-header-cell *matHeaderCellDef> סוג </th>
+            <td mat-cell class="tableItem textAlignLeft" [ngClass]="'w-150 wordWrap'" *matCellDef="let element">
+              {{element.typeValue}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="address">
+            <th mat-header-cell class="headerTableItem textAlignLeft" *matHeaderCellDef> כתובת </th>
+            <td mat-cell class="tableItem textAlignLeft" [ngClass]="'w-150 wordWrap'"  *matCellDef="let element">
+              {{element.address}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="phoneNumber">
+            <th mat-header-cell class="headerTableItem textAlignLeft" *matHeaderCellDef> טלפון </th>
+            <td mat-cell class="tableItem textAlignLeft" [ngClass]="'w-150 wordWrap'"  *matCellDef="let element">
+              {{element.phoneNumber | phone}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <th mat-header-cell class="headerTableItem textAlignLeft" *matHeaderCellDef> דוא"ל </th>
+            <td mat-cell *matCellDef="let element">
+              {{element.email}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+              (click)="selection.toggle(row)">
+          </tr>
+        </table>
+        <br>
+        <button mat-card-title class="addContact" (click)="addContactPerson()">
+          הוסף איש קשר
+        </button>
+    </div>
+
+  </div>
+</form>
