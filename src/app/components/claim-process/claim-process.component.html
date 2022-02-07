@@ -1,0 +1,47 @@
+<div class="form-container form-container-bg padLeft">
+  <form class="form-horizontal" [formGroup]="form">
+    <div class="form-group row">
+      <div class="col-md-12 col-ld-12 boxRow">
+        <div>
+          <mat-label class="lbl">{{lblsuperClaimNum}}</mat-label>
+
+          <mat-label class="lbl">{{lblsuperClaimStatus}}</mat-label>
+
+          <button mat-button class="me-2 button buttonText" (click)="refreshProcess()">
+              רענון תהליך
+          </button>
+        </div>
+  <br>
+      <div>
+      <app-super-claim formGroupName = "superClaimForm"
+          [contactPersonTypeSelValue] = "superClaimStatusSelectedValue"
+          [claimCauseSelValue] = "claimCauseSelectedValue"
+          [injuryTypeSelValue] = "injuryTypeSelectedValue"
+          [submitedBySelValue] = "submitedBySelectedValue"
+          [submitionMethodSelValue] = "submitionMethodSelectedValue"
+          [eventDate] = "eventDt"
+          [insuredDetails] = "insDetails"
+      >
+      </app-super-claim>
+      </div>
+  <br>
+      <app-insured formGroupName = "insuredForm"
+          [countContactPersons] = countContacts
+          (addContactClicked) = addContact(countContacts)
+          (clearAllContactsClicked) = clearAllContacts(countContacts)
+          (clearContactsClicked) = clearContacts(countContacts)
+      >
+      </app-insured>
+
+  <br>
+      <app-contact-persons formGroupName="contactPersonsForm"
+          [ds] = "dataSource"
+      >
+      </app-contact-persons>
+      </div>
+    </div>
+    <div>
+  </div>
+  </form>
+</div>
+
