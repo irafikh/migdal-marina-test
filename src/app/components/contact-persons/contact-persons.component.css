@@ -1,0 +1,101 @@
+.pageTitle {
+  text-align: right;
+  margin-top: 10px;
+  font: normal normal bold 22px/28px Roboto;
+  letter-spacing: 0.3px;
+  color: #005cace8 ;
+  opacity: 1;
+}
+
+table {
+  width: 60%;
+  border: 1px solid gray;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+.form-group {
+  height: 38px;
+}
+
+.cell-align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cell-align-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.text-align-right {
+  padding: 0 5px;
+}
+
+.th-right {
+  text-align: right;
+}
+
+.th-left {
+  text-align: right;
+}
+
+::ng-deep .mat-sort-header-content {
+  text-align: left !important;
+}
+
+::ng-deep .mat-sort-header-content {
+  text-align: left !important;
+}
+
+mat-cell:first-of-type,
+mat-header-cell:first-of-type,
+mat-footer-cell:first-of-type {
+  padding-left: 0px important;
+}
+
+.txtboxWithoutAlign {
+  font: normal normal normal 12px/16px Roboto;
+  letter-spacing: 0.36px;
+  color: #000000;
+  opacity: 1;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  height: 22px !important;
+  width: 100px;
+}
+
+.mat-row:hover {
+  cursor: pointer;
+}
+
+th, td {
+  background-color: rgb(250, 247, 244);
+}
+
+thead > tr {
+  background-color: rgb(250, 247, 244);
+  color: dimgray;
+}
+
+.addContact
+ {
+  border: 0;
+  background-color: rgb(250, 247, 244);
+  color: dimgray;
+  font-size: large;
+}
+
+
+ ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color:blue!important; /*outer ring color change*/
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+    width: 18px !important;
+    height: 18px !important;
+    background: #005DAC 0% 0% no-repeat padding-box !important;
+    opacity: 1 !important;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color:#005DAC;
+}
