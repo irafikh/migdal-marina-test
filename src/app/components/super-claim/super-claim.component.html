@@ -1,0 +1,136 @@
+<form [formGroup]="superClaimForm">
+    <div class="form-group">
+      <span class="pageTitle">{{lblPageTitle}}</span>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-12">
+        <table>
+          <thead>
+            <tr *ngFor="let id of insuredDetails" >
+                  <th>{{lblDetails}} </th>
+                  <th>{{id.fullName}} </th>
+                  <th>{{id.identity}} </th>
+                  <th>{{id.age}} </th>
+                  <th>{{id.address}} </th>
+            </tr>
+          </thead>
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>{{lblFullName}}</th>
+                  <th>{{lblIdentity}}</th>
+                  <th>{{lblAge}}</th>
+                  <th>{{lblAddress}}</th>
+              </tr>
+          </thead>
+        </table>
+        <br><br>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="form-group">
+    <div class="col-md-12 boxRow">
+        <div class="col-md-2">
+          <mat-label for="contactPersonTypeDD" class="label-select">{{lblContactPersonType}} </mat-label>
+          <mat-label class="star">*</mat-label>
+        </div>
+        <div class="col-md-4">
+          <div>
+          <mat-form-field>
+              <mat-select panelClass="panelClass" [disableOptionCentering]="true" formControlName="contactPersonTypeDD" [(value)]="contactPersonTypeSelectedValue">
+                  <mat-option *ngFor="let cpt of contactPersonType" [value]="cpt.value">
+                      {{cpt.viewValue}}
+                  </mat-option>
+              </mat-select>
+          </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+        <mat-label for="eventDate" class="label-select">{{lblEventDate}} </mat-label>
+        <mat-label class="star">*</mat-label>
+        </div>
+        <div class="col-md-4">
+          <mat-datepicker-toggle [for]="picker">
+            <mat-icon matDatepickerToggleIcon>today</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-form-field class="txtbox-full-width-picker">
+              <input matInput class="datepicker" [formControl]="eventDate" name="eventDate" [matDatepicker]="picker">
+              <mat-datepicker class="datepicker txtBoxPadRight" #picker panelClass="datepicker"></mat-datepicker>
+          </mat-form-field>
+        </div>
+    </div>
+    </div>
+
+    <div class="form-group">
+    <div class="col-md-12 boxRow">
+      <div class="col-md-2">
+        <mat-label for="claimCauseDD" class="label-select">{{lblClaimCause}} </mat-label>
+        <mat-label class="star">*</mat-label>
+      </div>
+      <div class="col-md-4">
+        <div>
+        <mat-form-field>
+            <mat-select panelClass="panelClass" formControlName="claimCauseDD" [disableOptionCentering]="true" [(value)]="claimCauseSelectedValue">
+                <mat-option *ngFor="let cc of claimCause" [value]="cc.value">
+                    {{cc.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <mat-label for="injuryTypeDD" class="label-select">{{lblInjuryType}} </mat-label>
+      </div>
+      <div class="col-md-4">
+        <div>
+        <mat-form-field>
+            <mat-select panelClass="panelClass" formControlName="injuryTypeDD" [disableOptionCentering]="true" [(value)]="injuryTypeSelectedValue">
+                <mat-option *ngFor="let it of injuryType" [value]="it.value">
+                    {{it.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-12 boxRow">
+      <div class="col-md-2">
+        <mat-label for="submitedByDD" class="label-select">{{lblSubmitedBy}}  </mat-label>
+        <mat-label class="star">*</mat-label>
+      </div>
+      <div class="col-md-4">
+        <div>
+        <mat-form-field>
+            <mat-select panelClass="panelClass" formControlName="submitedByDD" [disableOptionCentering]="true" [(value)]="submitedBySelectedValue">
+                <mat-option *ngFor="let sb of submitedBy" [value]="sb.value">
+                    {{sb.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <mat-label for="submitionMethodDD" class="label-select">{{lblSubmitionMethod}} </mat-label>
+      </div>
+      <div class="col-md-4">
+        <div>
+        <mat-form-field>
+            <mat-select panelClass="panelClass" formControlName="submitionMethodDD" [disableOptionCentering]="true" [(value)]="submitionMethodSelectedValue">
+                <mat-option *ngFor="let sm of submitionMethod" [value]="sm.value">
+                    {{sm.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+      </div>
+    </div>
+    </div>
+</form>
