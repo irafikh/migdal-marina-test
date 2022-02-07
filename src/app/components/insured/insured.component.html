@@ -1,0 +1,35 @@
+<form [formGroup]="insuredForm">
+  <div class="form-group">
+    <span class="pageTitle">{{lblPageTitle}}</span>
+  </div>
+
+    <div class="form-group">
+        <div class="col-md-12">
+
+          <div class="form-group row">
+            <div class="col-md-12 col-ld-12 boxRow">
+
+               <mat-label class="lbl">{{lblCountContactPersons}}</mat-label>
+
+               <mat-label>{{countContactPersons}}</mat-label>
+
+               <mat-label class="lbl">{{lblActions}}</mat-label>
+
+               <button mat-button class="me-2 button buttonText" id="addContact" (click)="addContactClick()">
+                  הוספת מבוטח
+              </button>
+
+               <button mat-button class="me-2 button buttonText" id="clearAllContacts" (click)="clearAllContactsClick()">
+                  איפוס מלא
+               </button>
+
+               <button mat-button class="me-2 button buttonText" id="clearContacts" (click)="clearContactsClick()">
+                  איפוס אנשי קשר
+               </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
